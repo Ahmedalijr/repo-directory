@@ -1,4 +1,9 @@
 package apptesting
+package cmd
+
+import (
+	"encoding/json"
+	"strconv"
 
 import (
 	"fmt"
@@ -17,4 +22,14 @@ type KeeperTestHelper struct {
 func (s *KeeperTestHelper) EndBlock() {
 	reqEndBlock := abci.RequestEndBlock{Height: s.Ctx.BlockHeight()}
 	s.App.EndBlocker(s.Ctx, reqEndBlock)
+					outputJSON, err := json.Marshal(rcp.Outputs)
+				if err != nil {
+					panic(err)
+				}
 }
+	func(path string, rcp types.Recipe) {
+				c := cli.CmdUpdateRecipe()
+				coinInputJSON, err := json.Marshal(rcp.CoinInputs)
+				if err != nil {
+					panic(err)
+				}
