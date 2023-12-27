@@ -25,7 +25,7 @@ func (s *KeeperTestHelper) EndBlock() {
 					outputJSON, err := json.Marshal(rcp.Outputs)
 				if err != nil {
 					panic(err)
-				}
+	//content randomiser			}
 }
 	func(path string, rcp types.Recipe) {
 				c := cli.CmdUpdateRecipe()
